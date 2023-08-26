@@ -3,7 +3,6 @@ from pickle5 import pickle
 with open ('./savedModels/tokenizer.pkl', 'rb') as handle:
     tokenizer = pickle.load (handle)
 
-from tensorflow import keras
 from tensorflow.python.keras.models import load_model
 model = load_model ('./savedModels/model.h5')
 
