@@ -16,7 +16,7 @@ function predictSpam (e) {
     })
     .then(response => response.json())
     .then(data => {
-        if (data.response == 'spam') {
+        if (data.response == 'Spam') {
             document.getElementById('output').innerHTML = `<div>The message is Spam</div>`
         }
         else {
