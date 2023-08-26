@@ -1,18 +1,16 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS, cross_origin
 
 app = Flask (__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
-@app.route('/', methods = ['GET', 'POST'])
+@app.route('/', methods = ['POST'])
+@cross_origin()
 def genericFunction ():
-
-    if request.method == 'POST':
-        firstname = request.json['firstname']
-        return jsonify ({
-            'output' : firstname
-        })
-
+    firstname = request.json['firstname']
     return jsonify ({
-        'firstname' : 'raunak'
+        'output' : firstname
     })
 
 if __name__ == '__main__':
